@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+  <script src="{% static 'login.js' %}"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+</head>
+<body style="background-color: rosybrown;">
+	<br><br><br><br><br>
+	<h1><b>SecureNest</b></h1><br>
+  <br>
+<div class="container" id="container" style="margin-left: 500px;">
+	<div class="form-container sign-in-container">
+		<form action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
+			<h1>Sign up</h1><br>
+    
+			<input style="background-color: beige;border: 2px solid gray;
+      border-radius: 4px;" type="text" name="username" placeholder="Username" minlength="5" required/>
+        <input style="background-color: beige;border: 2px solid gray;
+      border-radius: 4px;" type="email" name="email" placeholder="Email" required/>
+        <input style="background-color: beige;border: 2px solid gray;
+      border-radius: 4px;" type="number" name="phone" placeholder="Phone Number" required/>
+			<input style="background-color: beige;border: 2px solid gray;
+      border-radius: 4px;" type="password" name="password" minlength="5" placeholder="Password" required/>
+    
+      <br>
+			<input type="submit" class="btn btn-success" value="Sign up"><br>
+			<a href="{% url 'show_index' %}" style="color: blue;">Already Have an Account?</a>
+		</form>
+
+	</div>
+
+
+</div>
+
